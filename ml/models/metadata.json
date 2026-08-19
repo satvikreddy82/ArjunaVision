@@ -1,0 +1,22 @@
+{
+  "model_type": "RandomForestClassifier",
+  "n_estimators": 150,
+  "accuracy": 0.98,
+  "features": [
+    "fall_detected",
+    "health_anomaly",
+    "movement_anomaly",
+    "route_deviation",
+    "inactivity",
+    "no_response",
+    "gps_unavailable",
+    "health_severity",
+    "heart_rate",
+    "systolic_bp",
+    "blood_oxygen"
+  ],
+  "training_samples": 4000,
+  "class_balance": 0.0956,
+  "false_negatives": 2,
+  "true_positives": 94
+}
