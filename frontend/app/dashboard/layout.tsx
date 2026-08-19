@@ -2,9 +2,9 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { useStore } from "@/lib/store";
+import { useStore } from "../../lib/store";
 import { motion, AnimatePresence } from "framer-motion";
-import { emergencyAPI } from "@/lib/api";
+import { emergencyAPI } from "../../lib/api";
 
 const NAV_ITEMS = [
   { href: "/dashboard", icon: "🏠", label: "Dashboard" },

@@ -1,5 +1,5 @@
 "use client";
-import { useStore } from "@/lib/store";
+import { useStore } from "../../../lib/store";
 import Link from "next/link";
 import { motion } from "framer-motion";
 

@@ -2,8 +2,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from "recharts";
-import { useStore } from "@/lib/store";
-import { healthAPI } from "@/lib/api";
+import { useStore } from "../../../lib/store";
+import { healthAPI } from "../../../lib/api";
 
 interface HealthData {
   timestamp?: string;

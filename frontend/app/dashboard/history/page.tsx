@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { emergencyAPI, notificationsAPI } from "@/lib/api";
-import { useStore } from "@/lib/store";
+import { emergencyAPI, notificationsAPI } from "../../../lib/api";
+import { useStore } from "../../../lib/store";
 
 type TimelineType = "EMERGENCY" | "HEALTH" | "LOCATION" | "SYSTEM" | "ALL";
 

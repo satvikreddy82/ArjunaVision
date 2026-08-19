@@ -1,8 +1,8 @@
 "use client";
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { simulationAPI, emergencyAPI } from "@/lib/api";
-import { useStore } from "@/lib/store";
+import { simulationAPI, emergencyAPI } from "../../lib/api";
+import { useStore } from "../../lib/store";
 import Link from "next/link";
 
 const SCENARIOS = [

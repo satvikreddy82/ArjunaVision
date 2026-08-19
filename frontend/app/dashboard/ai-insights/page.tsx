@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useStore } from "@/lib/store";
+import { useStore } from "../../../lib/store";
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 const RISK_COLORS: Record<string, string> = { LOW: "#4fdbc8", MEDIUM: "#F59E0B", HIGH: "#fb923c", CRITICAL: "#ff5168" };

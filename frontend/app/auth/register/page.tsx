@@ -3,8 +3,8 @@ import { useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { authAPI } from "@/lib/api";
-import { useStore } from "@/lib/store";
+import { authAPI } from "../../../lib/api";
+import { useStore } from "../../../lib/store";
 
 function RegisterForm() {
   const router = useRouter();

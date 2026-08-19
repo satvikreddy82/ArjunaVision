@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useStore } from "@/lib/store";
-import { emergencyAPI } from "@/lib/api";
+import { useStore } from "../../lib/store";
+import { emergencyAPI } from "../../lib/api";
 
 interface GuardianEvent {
   id: string;

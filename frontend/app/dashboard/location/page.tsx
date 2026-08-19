@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { useStore } from "@/lib/store";
-import { locationAPI } from "@/lib/api";
+import { useStore } from "../../../lib/store";
+import { locationAPI } from "../../../lib/api";
 import dynamic from "next/dynamic";
 
 // Leaflet must be loaded client-side only
-const MapWithNoSSR = dynamic(() => import("@/components/location/LeafletMap"), { ssr: false, loading: () => (
+const MapWithNoSSR = dynamic(() => import("../../../components/location/LeafletMap"), { ssr: false, loading: () => (
   <div className="h-64 bg-surface-container-low rounded-xl flex items-center justify-center text-on-surface-variant text-sm">
     Loading map…
   </div>

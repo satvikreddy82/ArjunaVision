@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useStore } from "@/lib/store";
-import { contactsAPI } from "@/lib/api";
+import { useStore } from "../../../lib/store";
+import { contactsAPI } from "../../../lib/api";
 
 interface Contact {
   id: string;

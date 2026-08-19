@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { useStore } from "@/lib/store";
-import { healthAPI, locationAPI, emergencyAPI, riskAPI, simulationAPI } from "@/lib/api";
+import { useStore } from "../../lib/store";
+import { healthAPI, locationAPI, emergencyAPI, riskAPI, simulationAPI } from "../../lib/api";
 import Link from "next/link";
 
 // ─── Helper components ────────────────────────────────────────

@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useStore } from "@/lib/store";
-import { emergencyAPI, facilitiesAPI } from "@/lib/api";
+import { useStore } from "../../../lib/store";
+import { emergencyAPI, facilitiesAPI } from "../../../lib/api";
 
 type TriggerType = "MANUAL_SOS" | "VOICE_SOS" | "FALL_DETECTION" | "HEALTH_ANOMALY" | "ROUTE_DEVIATION" | "INACTIVITY" | "SIMULATED_EMERGENCY";
 

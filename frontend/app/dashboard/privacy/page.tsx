@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { privacyAPI } from "@/lib/api";
+import { privacyAPI } from "../../../lib/api";
 
 interface PrivacySettings {
   share_location: boolean;
