@@ -28,6 +28,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const pathname = usePathname();
   const {
     isAuthenticated,
+    hasHydrated,
     user,
     activeEmergency,
     currentRisk,
@@ -47,8 +48,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const triggeringRef = useRef(false);
 
   useEffect(() => {
-    if (!isAuthenticated) router.push("/auth/login");
-  }, [isAuthenticated, router]);
+    if (hasHydrated && !isAuthenticated) {
+      router.push("/auth/login");
+    }
+  }, [hasHydrated, isAuthenticated, router]);
 
   // Global background Voice SOS
   useEffect(() => {
@@ -162,6 +165,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     setVoiceText,
     addNotification,
   ]);
+
+  if (!hasHydrated) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <span className="w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   if (!isAuthenticated) return null;
 

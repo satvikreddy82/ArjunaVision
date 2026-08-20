@@ -90,8 +90,10 @@ interface GuardianStore {
   isAuthenticated: boolean;
   accessToken: string | null;
   user: UserProfile | null;
+  hasHydrated: boolean;
   setAuth: (token: string, user: UserProfile) => void;
   clearAuth: () => void;
+  setHydrated: () => void;
 
   // Safety
   safetyStatus: SafetyStatus;
@@ -165,6 +167,8 @@ export const useStore = create<GuardianStore>()(
       isAuthenticated: false,
       accessToken: null,
       user: null,
+      hasHydrated: false,
+      setHydrated: () => set({ hasHydrated: true }),
       setAuth: (token, user) => {
         if (typeof window !== "undefined") {
           localStorage.setItem("access_token", token);
@@ -285,6 +289,9 @@ export const useStore = create<GuardianStore>()(
         user: state.user,
         isDemoMode: state.isDemoMode,
       }),
+      onRehydrateStorage: () => (state) => {
+        state?.setHydrated();
+      },
     }
   )
 );

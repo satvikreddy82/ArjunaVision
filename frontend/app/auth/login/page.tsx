@@ -24,8 +24,15 @@ export default function LoginPage() {
       setAuth(access_token, { id: user_id, email, name, role });
       router.push("/dashboard");
     } catch (err: unknown) {
-      const axiosErr = err as { response?: { data?: { detail?: string } } };
-      setError(axiosErr?.response?.data?.detail || "Login failed. Please check your credentials.");
+      const axiosErr = err as { response?: { data?: { detail?: string | any[] } } };
+      let errorMessage = "Login failed. Please check your credentials.";
+      const detail = axiosErr?.response?.data?.detail;
+      if (typeof detail === "string") {
+        errorMessage = detail;
+      } else if (Array.isArray(detail) && detail.length > 0) {
+        errorMessage = detail[0].msg || "Validation error. Please check your inputs.";
+      }
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

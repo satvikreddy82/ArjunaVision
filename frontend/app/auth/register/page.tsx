@@ -29,8 +29,15 @@ function RegisterForm() {
       setAuth(access_token, { id: user_id, email, name, role });
       router.push("/dashboard");
     } catch (err: unknown) {
-      const axiosErr = err as { response?: { data?: { detail?: string } } };
-      setError(axiosErr?.response?.data?.detail || "Registration failed. Please try again.");
+      const axiosErr = err as { response?: { data?: { detail?: string | any[] } } };
+      let errorMessage = "Registration failed. Please try again.";
+      const detail = axiosErr?.response?.data?.detail;
+      if (typeof detail === "string") {
+        errorMessage = detail;
+      } else if (Array.isArray(detail) && detail.length > 0) {
+        errorMessage = detail[0].msg || "Validation error. Please check your inputs.";
+      }
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
